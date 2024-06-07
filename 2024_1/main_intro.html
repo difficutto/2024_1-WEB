@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>???</title>
+    <link href="main_intro/icon.png" rel="shortcut icon" type="image/x-icon">
+    <style>
+        body{
+            background-color: rgb(50, 50, 50);
+        }
+        div{
+            width: 100%;
+            align-content: center;
+        }
+        p{
+            padding: 5px 0;
+            width: 100%;
+            text-align: center;
+            color: rgb(238, 194, 84, 1);
+            font-weight: 900;
+            font-size: 2em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 170%;
+            word-spacing: 0.4em;
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="divScreen">
+        <audio src="main_intro/SE_Answer_01.wav.mp3" autoplay></audio>
+        <p id="dialog">???님이 입장하였습니다.<br>어서오세요 현지의 홈페이지에</p>
+    </div>
+    <script>
+        var divScreen = document.getElementById("divScreen");
+        var screenHeight = window.innerHeight;
+        divScreen.style.height = screenHeight*0.9+"px";
+
+        var entryEffectTimer = setInterval("loadDialog()", 150);
+
+        var objP_dialog = document.getElementById("dialog");
+        var dialogTypingAudio = "<audio src='main_intro/SE_Typing_04d.mp3' autoplay></audio>";
+
+        var isPreCharSpace = false;
+        var dialog_final = objP_dialog.innerHTML;
+        var dialog_remains = dialog_final;
+        var dialog_now = "";
+
+        function loadDialog() {
+            if (isPreCharSpace) {
+                dialog_now = dialog_now.substr(0, dialog_now.length - 1) + " ";
+            }
+
+            switch (dialog_remains.substr(0, 1)) {
+                case " ":
+                    dialog_now += "_";
+                    isPreCharSpace = true;
+                    dialog_remains = dialog_remains.substr(1, dialog_remains.length - 1);
+                    break;
+                    
+                default:
+                    switch (dialog_remains.substr(0, 4)) {
+                        case "<br>":
+                            dialog_now += dialog_remains.substr(0, 4);
+                            isPreCharSpace = false;
+                            dialog_remains = dialog_remains.substr(4, dialog_remains.length - 1);
+                            break;
+                        
+                        default:
+                            dialog_now += dialog_remains.substr(0, 1);
+                            isPreCharSpace = false;
+                            dialog_remains = dialog_remains.substr(1, dialog_remains.length - 1);
+                            break;
+                    }
+                    break;
+            }
+                
+            switch (dialog_now) {
+                case dialog_final:
+                    objP_dialog.innerHTML = dialog_final;
+
+                    clearInterval(entryEffectTimer);
+                    window.open('main.html', '_self');
+                    break;
+                        
+                default:
+                    objP_dialog.innerHTML = dialogTypingAudio + dialog_now;
+                    break;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

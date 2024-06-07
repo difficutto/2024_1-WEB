@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어서오세요 현지의 홈페이지에</title>
+    <link href="icon.png" rel="shortcut icon" type="image/x-icon">
+    <style>
+        body{
+            background-color: rgb(50, 50, 50);
+
+            animation-name: animation;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+        }
+        header{
+            background-color: rgb(217, 217, 208);
+            width: 100%;
+        }
+        .headerBtn{
+            width: 100%;
+            float: left;
+            margin: 30px 0 0 30px;
+
+        }
+        .headerDiv{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bolder;
+            color: rgb(50, 50, 50);
+        }
+        .headerDivObj{
+            height: 450px;
+        }
+        #headerImg{
+            width: 480px;
+            background-image: url(main/pixel-art-7280889_640.png);
+            background-repeat: no-repeat;
+        }
+        #headerStr p{
+            width: 320px;
+            margin-top: 160px;
+            margin-left: 40px;
+            font-weight: 900;
+            font-size: 1.2em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 130%;
+            word-spacing: 0.2em;
+        }
+        nav{
+            width: 960px;
+            background-color: rgb(113, 118, 111);
+
+            display: flex;
+            flex-direction: row;
+        }
+        nav a{
+            text-decoration: none;
+        }
+        nav a li{
+            list-style-type: none;
+            width: 320px;
+            padding: 7px 0;
+
+            color: rgb(195, 222, 105);
+            text-align: center;
+            font-weight: 700;
+            font-size: 1em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            word-spacing: 0.3em;
+        }
+        nav a li:hover{
+            color: rgb(239, 129, 78);
+            background-color: rgb(0, 0, 0, 0.3);
+        }
+        section div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(217, 217, 208);
+        }
+        section div div{
+            width: 960px;
+            background-color: rgb(113, 118, 111, 0.5);
+        }
+
+        @keyframes animation{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <header>
+        <div class = "headerBtn"><button onclick="movetoIntro()">인트로<br>다시보기</button></div>
+        <div class = "headerDiv">
+            <div class="headerDivObj" id="headerImg"></div>
+            <div class="headerDivObj" id="headerStr">
+                <p>
+                    <audio src='main/BlueNewWorld_Short.ogg.mp3' autoplay controls></audio>
+                    <br><br>웹 프로그래밍 2분반
+                    <br>202202185 고현지
+                </p>
+            </div>
+        </div>
+        <div class = "headerDiv">
+            <nav>
+                <a href="menu1.html"><li id="menu1">본인 소개</li></a>
+                <a href="menu2.html"><li id="menu2">관심 기술</li></a>
+                <a href="menu3.html"><li id="menu3">미래 계획</li></a>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div>
+            <div>안녕하세요</div>
+        </div>
+    </section>
+
+    <script>
+        var background_audio = "";
+        var headerAudio = document.getElementById("headerAudio");
+        headerAudio.innerHTML = background_audio;
+
+        function movetoIntro() {
+            window.open('main_intro.html', '_self');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body{
+    background-color: rgb(50, 50, 50);
+}
+header{
+    background-color: rgb(217, 217, 208);
+    width: 100%;
+}
+.headerDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.headerDivObj{
+    height: 210px;
+}
+#headerImg{
+    width: 240px;
+    background-image: url(main/pixel-art-7280889_640.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#headerStr p{
+    width: 240px;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 1.2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 130%;
+    word-spacing: 0.2em;
+}
+nav{
+    width: 1260px;
+    background-color: rgb(113, 118, 111);
+
+    display: flex;
+    flex-direction: row;
+}
+nav a{
+    text-decoration: none;
+}
+nav a li{
+    list-style-type: none;
+    width: 420px;
+    padding: 7px 0;
+
+    color: rgb(195, 222, 105);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    word-spacing: 0.3em;
+}
+nav a li:hover{
+    color: rgb(239, 129, 78);
+    background-color: rgb(0, 0, 0, 0.3);
+}
+#content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(217, 217, 208);
+}
+aside{
+    width: 315px;
+}
+aside div{
+    width: 285px;
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 0 30px 30px 0;
+    border-style: solid;
+    border-color: rgb(113, 118, 111);
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    word-spacing: 0.3em;
+    font-weight: 700;
+    line-height: 130%;
+    color: rgb(50, 50, 50);
+}
+aside div a{
+    text-decoration: none;
+    color: rgb(50, 50, 50);
+}
+aside div a li{
+    padding: 5px;
+}
+aside div a li:hover{
+    background-color: rgb(113, 118, 111, 0.5);
+    color: rgb(239, 129, 78);
+}
+section{
+    width: 945px;
+}
+section div{
+    margin: 30px 0 30px 30px;
+    width: 885px;
+    background-color: rgb(113, 118, 111, 0.2);
+}
+section div{
+    text-decoration: none;
+}
+section div article{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    word-spacing: 0.3em;
+    font-weight: 700;
+}
+article hr{
+    width: 855px;
+    border-color: rgb(113, 118, 111);
+}
+section div article p{
+    padding: 0 20px;
+}
+.question{
+    padding-top: 20px;
+    text-align: center;
+    color: rgb(239, 129, 78);
+    font-size: 1.3em;
+}
+.answer{
+    padding-bottom: 20px;
+    font-size: 1em;
+    color: rgb(50, 50, 50);
+    line-height: 130%;
+}
+a{
+    text-decoration: none;
+}
