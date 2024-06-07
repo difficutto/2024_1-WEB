@@ -129,7 +129,9 @@
     </header>
     <section>
         <div>
-            <div>안녕하세요</div>
+            <div>
+                <canvas id="canvas" style="background-color: aliceblue;" width="960px" height="960px"></canvas>
+            </div>
         </div>
     </section>
 
@@ -137,6 +139,8 @@
         var background_audio = "";
         var headerAudio = document.getElementById("headerAudio");
         headerAudio.innerHTML = background_audio;
+
+        var canvas = document.getElementById("canvas");
 
         function movetoIntro() {
             window.open('main_intro.html', '_self');
